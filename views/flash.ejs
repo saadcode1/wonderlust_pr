@@ -1,0 +1,42 @@
+<% if (success && success.length) { %>
+    <div class="row offset-4">
+        <div class="col-6">
+            <div id="closeTb" class="alert alert-warning alert-dismissible fade show" role="alert">
+                <%=success%>
+                <button id="closeBtn" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+<% } %>
+
+
+<% if (error && error.length) { %>
+    <div class="row offset-4">
+        <div class="col-6">
+            <div id="closeTb" class="alert alert-warning alert-dismissible fade show" role="alert">
+                <%=error%>
+                <button id="closeBtn" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+<% } %>
+
+<% if (signup && signup.length) { %>
+    <div class="row offset-4">
+        <div class="col-6">
+            <div id="closeTb" class="alert alert-warning alert-dismissible fade show" role="alert">
+                <%=signup%>
+                <button id="closeBtn" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+<% } %>
+
+
+<script >
+    let closeBtn = document.querySelector("#closeBtn");
+  closeBtn.addEventListener("click", () => {
+      let closeTb = document.querySelector("#closeTb");
+      closeTb.classList.add("d-none"); // add the d-none class to hide the alert
+  });
+  </script>

@@ -1,0 +1,86 @@
+<% layout('boilerplate') -%>
+<style>
+    img{
+        width:50%;
+        height:50%;
+        margin: 5px;
+        border-radius: 10px;
+        }
+</style>
+<div class="list-div show">
+    <div class="list-container">
+        <ul class="list-ul">
+            <div class="image-container">
+                <img class="offset-3" src="<%= listedData.image.url %>" alt="img"/>
+                <div class="row col-6 offset-3">
+                    <div class="">
+                        <p>Username: <%= listedData.owner.username %></p>
+                        <p>Email: <%= listedData.owner.email %></p>
+                        <hr/>
+                    
+                <p style="font-weight: bold;font-size: 1.2em;">Title:<b><%= listedData.title %></b></p>
+                <p style="font-weight: bold;font-size: 1.2em;">Description:<b><%= listedData.description %></b></p>
+                <p style="font-weight: bold;font-size: 1.2em;">Location:<b><%= listedData.location %></b></p>
+                <p style="font-weight: bold;font-size: 1.2em;">Country:<b><%= listedData.country %></b></p>
+                <p>&#8377;<b><%= listedData.price %></b></p>
+                <br/>
+            </div>
+            </div>
+            <hr/>
+                <div class="row col-6 offset-3">
+                <div class="added-review">
+                    <% for(review of listedData.review){ %>
+                        <h5>Author:<%=review.author.username%></h5>
+                        <p>Comment: <%= review.comment %></p>
+                        <p>Rating: <%= review.rating %> / 5</p>
+                        <hr/>
+<% } %>
+                </div>
+          
+                      
+                
+                <% if (userReq) { %>
+                  
+                        <% if (userReq.username === listedData.owner.username) { %>
+                            <div class="btn-div">
+                                <a href="/airBNB/<%= listedData._id %>/edit"><button>Edit</button></a>
+                                <a href="/airBNB/<%= listedData._id %>/delete"><button>Delete</button></a>
+                            </div>
+                        <% } %>
+                    <% } %>
+              
+                
+                
+               
+                <br/>
+                <div class="review-div">
+                    <form method="post" action="/airBNB/<%= listedData._id %>/review">
+                        <label for="comment-1">Review This!</label>
+                        <textarea name="review[comment]" id="comment-1" rows="5" cols="150"></textarea>
+                        <br/>
+                        <label for="rating-1">Rating</label>
+                        <input name="review[rating]" style="width:100%;" type="range" id="rating-1" min="0" max="5" value="5" step="1"/>
+                        <br/>
+                        <button>Submit</button> 
+                    </form>
+                </div>
+            </div>
+        </ul>
+    </div>
+</div>
+<br/>
+<br/>
+<br/>
+<br/>
+<div class="row offset-3">
+    <div class="col-6">
+        <iframe width="746" height="414" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" src="https://maps.google.com/maps?width=746&amp;height=414&amp;hl=en&amp;q=delhi%20delhi+(delhi)&amp;t=h&amp;z=10&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
+
+        </iframe><a href='https://www.acadoo.de/leistungen/ghostwriter-masterarbeit/'>Hilfe Masterarbeit</a> 
+    </div>
+</div>
+
+
+<script type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=c57bf28f0310c3e2bdf93660a7067701e6f95158'></script>
+
+      

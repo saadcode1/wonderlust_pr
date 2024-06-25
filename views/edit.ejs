@@ -1,0 +1,33 @@
+<% layout('boilerplate') -%>
+    <div class="form-div">
+        <div class="form-container">
+            <form style="display: grid;width: 100%;" method="POST" action="/airBNB/<%=editData._id%>?_method=PUT" enctype="multipart/form-data">
+                <label  for="">Title</label>
+                <input name="allUpdate[title]" type="text" placeholder="Enter Title" value="<%=editData.title%>" required/>
+                <br/>
+                <label  for="">Description</label>
+                <input  name="allUpdate[description]" type="text" placeholder="Enter Title" value="<%=editData.description%>" required/>
+                <br/>
+                <label  for="">Upload New Image</label>
+                <input  name="allUpdate[image]" type="file" placeholder="Enter Title" value="<%=editData.image%>"/>
+                <br/>
+                <label  for="">Price</label>
+                <input  name="allUpdate[price]" type="text" placeholder="Enter Title" value="<%=editData.price%>" required/>
+                <br/>
+                <label  for="">Location</label>
+                <input  name="allUpdate[location]" type="text"  placeholder="Enter Title" value="<%=editData.location%>" required/>
+                <br/>
+                <label  for="">Country</label>
+                <input  name="allUpdate[country]" type="text" placeholder="Enter Title" value="<%=editData.country%>" required/>
+                <br/>
+                <button class="btn">ADD</button>
+            </form>
+        </div>
+    </div>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>

@@ -1,0 +1,31 @@
+<% layout('boilerplate') -%>
+    <div class="form-div" style="margin-bottom: 37%;">
+        <div class="form-container">
+            <form  name="myForm" class="form-control" style="display: grid;width: 100%;" method="POST" action="/airBNB/add/added" onsubmit="return validateForm()" enctype="multipart/form-data">
+                <label  for="">Title</label>
+                <input class="input-fields form-control" name="listing[title]" type="text" placeholder="Enter Title"/>
+                <br/>
+                <label  for="">Description</label>
+                <input class="input-fields form-control"  name="listing[description]" type="text" placeholder="Enter Title"/>
+                <br/>
+                <!-- <label  for="">Image</label>
+                <input class="input-fields form-control"  name="listing[image]" type="text" placeholder="Enter Title" />
+                <br/> -->
+                <label  for="">upload Image</label>
+                <input class="input-fields form-control"  name="listing[image]" type="file" placeholder="Enter Title" />
+                <br/>
+                <label  for="">Price</label>
+                <input class="input-fields form-control"  name="listing[price]" type="text" placeholder="Enter Title"/>
+                <br/>
+                <label  for="">Location</label>
+                <input class="input-fields form-control"  name="listing[location]" type="text"  placeholder="Enter Title" />
+                <br/>
+                <label  for="">Country</label>
+                <input  class="input-fields form-control" name="listing[country]" type="text" placeholder="Enter Title"/>
+                <br/>
+                <button class="form-control btn">ADD</button>
+            </form>
+        </div>
+    </div>
+    <script src="script.js">
+    </script>

@@ -1,0 +1,16 @@
+<% layout('boilerplate') -%>
+    <div class="form-div">
+        <div class="form-container">
+            <form  name="myForm" class="needs-validation" style="display: grid;width: 100%;" method="POST" action="/login" onsubmit="return validateForm()">
+                <label  for="">Username</label>
+                <input class="input-fields"  name="username" type="text" placeholder="Username"/>
+                <br/>
+                <label  for="">Password</label>
+                <input class="input-fields"  name="password" type="" placeholder="Password" />
+                <br/>
+                <button class="btn-1">LogIn</button>
+            </form>
+        </div>
+    </div>
+    <script src="script.js">
+    </script>

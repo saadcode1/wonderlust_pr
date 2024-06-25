@@ -1,0 +1,10 @@
+<% if (message && message.length) { %>
+    <div class="row offset-4">
+        <div class="col-6">
+            <div id="closeTb" class="alert alert-warning alert-dismissible fade show" role="alert">
+                <%=message%>
+                <button id="closeBtn" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+<% } %>
